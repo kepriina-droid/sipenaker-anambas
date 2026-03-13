@@ -1,0 +1,169 @@
+:root {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  color: #1f2a44;
+  background: #f1f5fb;
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.app-shell {
+  min-height: 100vh;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem 2rem;
+  background: linear-gradient(135deg, #0d3b66, #1b5d8c);
+  color: #fff;
+}
+
+.brand-subtitle {
+  margin: 0;
+  font-size: 0.8rem;
+  opacity: 0.85;
+}
+
+.brand-title {
+  margin: 0.2rem 0 0;
+  font-size: 1.4rem;
+}
+
+.navbar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.6rem;
+  padding: 1rem 2rem;
+  background: #ffffff;
+  border-bottom: 1px solid #dae3ef;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #28486b;
+  font-weight: 500;
+  padding: 0.55rem 0.7rem;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background: #e5eef8;
+  color: #0d3b66;
+}
+
+.content {
+  padding: 1.5rem 2rem 2rem;
+}
+
+.page-section {
+  background: #fff;
+  border: 1px solid #e0e7f1;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(17, 47, 87, 0.08);
+}
+
+.section-head h2 {
+  margin: 0;
+  color: #123e6b;
+}
+
+.section-head p {
+  margin: 0.5rem 0 1rem;
+  color: #4f627c;
+}
+
+.stats-grid {
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin-bottom: 1rem;
+}
+
+.stat-card {
+  background: #f4f8fd;
+  border-radius: 12px;
+  border: 1px solid #dbe6f4;
+  padding: 0.9rem;
+}
+
+.stat-label {
+  margin: 0;
+  color: #5c6f88;
+  font-size: 0.9rem;
+}
+
+.stat-value {
+  margin: 0.3rem 0 0;
+  color: #123e6b;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.feature-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: #304c70;
+}
+
+.feature-item + .feature-item {
+  margin-top: 0.6rem;
+}
+
+.form-grid {
+  display: grid;
+  gap: 0.9rem;
+  max-width: 560px;
+}
+
+.form-grid label {
+  display: grid;
+  gap: 0.3rem;
+  font-weight: 600;
+  color: #2f4766;
+}
+
+input,
+select,
+textarea {
+  border: 1px solid #c7d5e8;
+  border-radius: 10px;
+  padding: 0.7rem 0.8rem;
+  font: inherit;
+}
+
+.primary-btn {
+  border: none;
+  background: #0f4c81;
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  padding: 0.65rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 720px) {
+  .topbar,
+  .content,
+  .navbar {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
