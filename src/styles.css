@@ -127,6 +127,25 @@ body {
   max-width: 560px;
 }
 
+.form-feedback {
+  margin: 0;
+  padding: 0.75rem 0.9rem;
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+.form-feedback-success {
+  background: #e6f7ef;
+  border: 1px solid #b9e7cd;
+  color: #1f6b47;
+}
+
+.form-feedback-error {
+  background: #fdecec;
+  border: 1px solid #f4c2c2;
+  color: #922f2f;
+}
+
 .form-grid label {
   display: grid;
   gap: 0.3rem;
@@ -152,6 +171,11 @@ textarea {
   padding: 0.65rem 1rem;
   border-radius: 10px;
   cursor: pointer;
+}
+
+.primary-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
 }
 
 @media (max-width: 720px) {
