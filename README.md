@@ -68,6 +68,48 @@ Hasil build akan ada di folder `dist/`.
 npm run preview
 ```
 
+## Setup Supabase (Panduan Singkat Pemula)
+
+Form Pelaporan Perusahaan sudah terhubung ke Supabase untuk:
+- menyimpan data perusahaan ke `public.companies`,
+- menyimpan laporan ke `public.company_reports`,
+- upload dokumen ke bucket `company-documents`,
+- menyimpan metadata dokumen ke `public.uploaded_documents`.
+
+Ikuti langkah berikut:
+
+### 1) Buat project Supabase
+1. Buka https://supabase.com dan login.
+2. Klik **New project** lalu tunggu sampai project aktif.
+
+### 2) Ambil URL dan Anon Key
+Di dashboard project Supabase:
+- buka **Project Settings** → **API**,
+- salin **Project URL**,
+- salin **anon public key**.
+
+### 3) Buat file `.env`
+Di root project ini, buat file `.env`:
+
+```bash
+VITE_SUPABASE_URL=https://xxxx.supabase.co
+VITE_SUPABASE_ANON_KEY=your-anon-key
+```
+
+> Penting: awalan `VITE_` wajib untuk project Vite.
+
+### 4) Siapkan tabel dan bucket
+Buat tabel berikut di schema `public` (minimal kolom yang dipakai frontend):
+- `companies`: `id` (uuid/int, primary key), `name` (text)
+- `company_reports`: `id`, `company_id`, `worker_count`, `bpjs_status`, `notes`
+- `uploaded_documents`: `id`, `company_report_id`, `bucket_name`, `file_name`, `file_path`, `mime_type`, `file_size`
+
+Buat storage bucket bernama **`company-documents`**.
+
+### 5) Atur RLS policy sementara untuk pengembangan
+Karena belum ada login/autentikasi, izinkan operasi insert/upload untuk pengembangan lokal.
+Setelah autentikasi dibuat, kebijakan ini sebaiknya diperketat.
+
 ## Struktur Folder Sederhana
 
 ```text
